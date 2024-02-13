@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+<listener class-name="BasicTest.Listener"/>
+</listeners>
+  <test name="Loan">
+  <parameter name="pUrl" value="zarcare.com"/>
+    <classes>
+      <class name="BasicTest.Day1"/>
+      <class name="BasicTest.Day3">
+      <methods>
+      <include name="goldLoanRequest"></include>
+      </methods>
+      <methods>
+      <include name="goldLoanApproved"></include>
+      </methods>
+      </class>
+       </classes>
+  </test> 
+  <test name = "Autoloan">
+  <parameter name="aUrl" value="lng.com"/>
+  <parameter name="ApiKey" value="123456"/>
+  <classes>
+    <class name="BasicTest.Day2">
+    <methods>
+    <include name="home.*"></include>
+    </methods>
+    </class>
+  </classes>
+  
+  </test><!-- Test -->
+</suite> <!-- Suite -->
